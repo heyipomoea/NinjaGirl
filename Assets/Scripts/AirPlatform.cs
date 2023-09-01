@@ -25,6 +25,6 @@ public class AirPlatform : MonoBehaviour
             targetPosition = originPosition;
         }
 
-        //transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
     }
 }
