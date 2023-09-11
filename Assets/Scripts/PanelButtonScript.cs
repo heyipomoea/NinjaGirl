@@ -33,5 +33,8 @@ public class PanelButtonScript : MonoBehaviour
         GameObject mainMenuPlayer = GameObject.Find("MainMenuPlayer");
         Animator myAnim = mainMenuPlayer.GetComponent<Animator>();
         myAnim.SetBool("Run", true);
+
+        GameObject playButton = GameObject.Find("Canvas/SafeAreaPanel/PlayButton");
+        playButton.SetActive(false);
     }
 }
