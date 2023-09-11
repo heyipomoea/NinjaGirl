@@ -27,4 +27,11 @@ public class PanelButtonScript : MonoBehaviour
     {
         stopButton.SetActive(false);
     }
+
+    public void MainMenuPlayButton()
+    {
+        GameObject mainMenuPlayer = GameObject.Find("MainMenuPlayer");
+        Animator myAnim = mainMenuPlayer.GetComponent<Animator>();
+        myAnim.SetBool("Run", true);
+    }
 }
