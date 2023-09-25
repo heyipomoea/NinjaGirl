@@ -1,6 +1,7 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PanelButtonScript : MonoBehaviour
 {
@@ -36,5 +37,7 @@ public class PanelButtonScript : MonoBehaviour
 
         GameObject playButton = GameObject.Find("Canvas/SafeAreaPanel/PlayButton");
         playButton.SetActive(false);
+
+        SceneManager.LoadScene("LevelSelect");
     }
 }

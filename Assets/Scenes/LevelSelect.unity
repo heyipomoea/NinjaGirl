@@ -295,7 +295,7 @@ GameObject:
   - component: {fileID: 808319405}
   - component: {fileID: 808319404}
   m_Layer: 5
-  m_Name: 'Level1Button '
+  m_Name: Level1Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -365,7 +365,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 808319405}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5795920074621888871}
+        m_TargetAssemblyTypeName: SelectSceneButtonScript, Assembly-CSharp
+        m_MethodName: GoToLevel1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &808319405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,7 +429,7 @@ GameObject:
   - component: {fileID: 1237153615}
   - component: {fileID: 1237153614}
   m_Layer: 5
-  m_Name: 'Level3Button   '
+  m_Name: Level3Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -685,7 +697,7 @@ GameObject:
   - component: {fileID: 1598832277}
   - component: {fileID: 1598832276}
   m_Layer: 5
-  m_Name: 'Level2Button  '
+  m_Name: Level2Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1605,6 +1617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac35ee4124f15ef4b93630d7fc2fecd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonSprite: {fileID: 914970946, guid: 2201ecd2dd4b5304694a8ebe370301b6, type: 3}
 --- !u!1 &6439060392403824762
 GameObject:
   m_ObjectHideFlags: 0
