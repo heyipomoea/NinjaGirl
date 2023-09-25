@@ -13,7 +13,13 @@ public class WinTrigger : MonoBehaviour
             string temp = levelName.Substring(5);
             int levelNumber = int.Parse(temp);
 
-            PlayerPrefs.SetInt("clearedLevel", levelNumber);
+            int clearedLevel = PlayerPrefs.GetInt("clearedLevel");
+
+            if(levelNumber > clearedLevel)
+            {
+                PlayerPrefs.SetInt("clearedLevel", levelNumber);
+            }
+
             SceneManager.LoadScene("LevelSelect");
         }
     }

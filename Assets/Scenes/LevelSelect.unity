@@ -499,7 +499,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1237153615}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5795920074621888871}
+        m_TargetAssemblyTypeName: SelectSceneButtonScript, Assembly-CSharp
+        m_MethodName: GoToLevel3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1237153615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -767,7 +779,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1598832277}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5795920074621888871}
+        m_TargetAssemblyTypeName: SelectSceneButtonScript, Assembly-CSharp
+        m_MethodName: GoToLevel2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1598832277
 MonoBehaviour:
   m_ObjectHideFlags: 0

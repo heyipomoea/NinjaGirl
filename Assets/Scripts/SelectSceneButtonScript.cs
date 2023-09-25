@@ -10,13 +10,15 @@ public class SelectSceneButtonScript : MonoBehaviour
 
     Image imageBtn1, imageBtn2, imageBtn3;
 
+    int clearedLevel;
+
     private void Awake()
     {
         imageBtn1 = GameObject.Find("Canvas/SafeAreaPanel/Level1Button").GetComponent<Image>();
         imageBtn2 = GameObject.Find("Canvas/SafeAreaPanel/Level2Button").GetComponent<Image>();
         imageBtn3 = GameObject.Find("Canvas/SafeAreaPanel/Level3Button").GetComponent<Image>();
 
-        int clearedLevel = PlayerPrefs.GetInt("clearedLevel", 0);
+        clearedLevel = PlayerPrefs.GetInt("clearedLevel", 0);
 
         if(clearedLevel == 0)
         {
@@ -38,5 +40,21 @@ public class SelectSceneButtonScript : MonoBehaviour
     public void GoToLevel1()
     {
         SceneManager.LoadScene("Level1");
+    }
+
+    public void GoToLevel2()
+    {
+        if(clearedLevel >= 1)
+        {
+            SceneManager.LoadScene("Level2");
+        }
+    }
+
+    public void GoToLevel3()
+    {
+        if(clearedLevel >= 2)
+        {
+            SceneManager.LoadScene("Level3");
+        }
     }
 }
