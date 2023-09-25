@@ -14,9 +14,9 @@ public class SelectSceneButtonScript : MonoBehaviour
 
     private void Awake()
     {
-        imageBtn1 = GameObject.Find("Canvas/SafeAreaPanel/Level1Button").GetComponent<Image>();
-        imageBtn2 = GameObject.Find("Canvas/SafeAreaPanel/Level2Button").GetComponent<Image>();
-        imageBtn3 = GameObject.Find("Canvas/SafeAreaPanel/Level3Button").GetComponent<Image>();
+        imageBtn1 = GameObject.Find("Canvas/SafeAreaPanel/SelectPanelBGImage/Level1Button").GetComponent<Image>();
+        imageBtn2 = GameObject.Find("Canvas/SafeAreaPanel/SelectPanelBGImage/Level2Button").GetComponent<Image>();
+        imageBtn3 = GameObject.Find("Canvas/SafeAreaPanel/SelectPanelBGImage/Level3Button").GetComponent<Image>();
 
         clearedLevel = PlayerPrefs.GetInt("clearedLevel", 0);
 
@@ -39,14 +39,16 @@ public class SelectSceneButtonScript : MonoBehaviour
 
     public void GoToLevel1()
     {
-        SceneManager.LoadScene("Level1");
+        //SceneManager.LoadScene("Level1");
+        FadeInOut.instance.SceneFadeInOut("Level1");
     }
 
     public void GoToLevel2()
     {
         if(clearedLevel >= 1)
         {
-            SceneManager.LoadScene("Level2");
+            //SceneManager.LoadScene("Level2");
+            FadeInOut.instance.SceneFadeInOut("Level2");
         }
     }
 
@@ -54,7 +56,14 @@ public class SelectSceneButtonScript : MonoBehaviour
     {
         if(clearedLevel >= 2)
         {
-            SceneManager.LoadScene("Level3");
+            //SceneManager.LoadScene("Level3");
+            FadeInOut.instance.SceneFadeInOut("Level3");
         }
+    }
+
+    public void GoToMainMenu()
+    {
+        //SceneManager.LoadScene("MainMenu");
+        FadeInOut.instance.SceneFadeInOut("MainMenu");
     }
 }

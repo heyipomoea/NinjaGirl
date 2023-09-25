@@ -196,7 +196,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3059936707258454472}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6495975640023443331}
+        m_TargetAssemblyTypeName: PanelButtonScript, Assembly-CSharp
+        m_MethodName: ReplayButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1486754387160137276
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,7 +634,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 697173131520187302}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6495975640023443331}
+        m_TargetAssemblyTypeName: PanelButtonScript, Assembly-CSharp
+        m_MethodName: MainMenuButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2450120642958756651
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,6 +1279,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectPanel: {fileID: 3510342501623461353}
   stopButton: {fileID: 4016976215359066496}
+  levelSelectButton: {fileID: 8458207659140360300}
+  mainMenuButton: {fileID: 2222037964285524774}
+  replayButton: {fileID: 795891941451404612}
 --- !u!1 &6136875771501575526
 GameObject:
   m_ObjectHideFlags: 0
@@ -1548,7 +1575,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8653044370187823980}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6495975640023443331}
+        m_TargetAssemblyTypeName: PanelButtonScript, Assembly-CSharp
+        m_MethodName: LevelSelectButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8585670729380485134
 GameObject:
   m_ObjectHideFlags: 0
