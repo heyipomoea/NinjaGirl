@@ -1,6 +1,7 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -9,7 +10,9 @@ public class Player : MonoBehaviour
     public GameObject attackCollider, kunaiPrefab;
 
     float kunaiDistance;
-    int playerLife;
+    public int playerLife;
+
+    Canvas myCanvas;
 
     [HideInInspector]
     public Animator myAnim;
@@ -24,6 +27,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
+        myCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
         myAnim = GetComponent<Animator>();
         myRigi = GetComponent<Rigidbody2D>();
         mySr = GetComponent<SpriteRenderer>();
@@ -34,7 +38,7 @@ public class Player : MonoBehaviour
         isAttack = false;
         isHurt = false;
         canBeHurt = true;
-        playerLife = 3;
+        playerLife = PlayerPrefs.GetInt("PlayerLife");
     }
 
     private void Update()
@@ -115,6 +119,8 @@ public class Player : MonoBehaviour
             isAttack = true;
             myRigi.velocity = new Vector2(0f, 0f);
             myAnim.SetBool("Die", true);
+            PlayerPrefs.SetInt("PlayerLife", 5);
+            FadeInOut.instance.SceneFadeInOut("LevelSelect");
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -123,6 +129,8 @@ public class Player : MonoBehaviour
         {
             
             playerLife--;
+            PlayerPrefs.SetInt("PlayerLife", playerLife);
+            myCanvas.LifeUpdate();
             if(playerLife >= 1)
             {
                 myAudioSource.PlayOneShot(myAudioClip[0]);
@@ -150,14 +158,14 @@ public class Player : MonoBehaviour
                 isAttack = true;
                 myRigi.velocity = new Vector2(0f, 0f);
                 myAnim.SetBool("Die", true);
+                PlayerPrefs.SetInt("PlayerLife", 5);
+                FadeInOut.instance.SceneFadeInOut("LevelSelect");
             }
         }
         if(collision.tag == "Item")
         {
             myAudioSource.PlayOneShot(myAudioClip[1]);
-            Destroy(collision.gameObject);
         }
-
     }
 
     IEnumerator SetIsHurtFalse()
@@ -177,6 +185,8 @@ public class Player : MonoBehaviour
         {
            
             playerLife--;
+            PlayerPrefs.SetInt("PlayerLife", playerLife);
+            myCanvas.LifeUpdate();
             if (playerLife >= 1)
             {
                 myAudioSource.PlayOneShot(myAudioClip[0]);
@@ -204,10 +214,12 @@ public class Player : MonoBehaviour
                 isAttack = true;
                 myRigi.velocity = new Vector2(0f, 0f);
                 myAnim.SetBool("Die", true);
+                PlayerPrefs.SetInt("PlayerLife", 5);
+                FadeInOut.instance.SceneFadeInOut("LevelSelect");
             }
         }
     }
-    //­n¦b¨ü¶Ëªº²Ä¤@­ÓFrame©I¥s³o­Ó¨ç¦¡
+    //è¦åœ¨å—å‚·çš„ç¬¬ä¸€å€‹Frameå‘¼å«é€™å€‹å‡½å¼
     public void SetIsAttackFalse()
     {
         isAttack = false;

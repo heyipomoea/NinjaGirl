@@ -661,6 +661,7 @@ GameObject:
   - component: {fileID: 9982060914083118}
   - component: {fileID: 4492218578670216717}
   - component: {fileID: 8484134305053204612}
+  - component: {fileID: 7557672330917079042}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -850,6 +851,21 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7557672330917079042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2450120642958756651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f27d1ce321bc146b5a25b03af4f941, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeText: {fileID: 8911901029880132433}
+  kunaiText: {fileID: 1158633765098689476}
+  stoneText: {fileID: 7881117062373021135}
 --- !u!1 &3021487192871340433
 GameObject:
   m_ObjectHideFlags: 0

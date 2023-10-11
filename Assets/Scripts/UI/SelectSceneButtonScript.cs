@@ -18,7 +18,7 @@ public class SelectSceneButtonScript : MonoBehaviour
         imageBtn2 = GameObject.Find("Canvas/SafeAreaPanel/SelectPanelBGImage/Level2Button").GetComponent<Image>();
         imageBtn3 = GameObject.Find("Canvas/SafeAreaPanel/SelectPanelBGImage/Level3Button").GetComponent<Image>();
 
-        clearedLevel = PlayerPrefs.GetInt("clearedLevel", 0);
+        clearedLevel = PlayerPrefs.GetInt("clearedLevel");
 
         if(clearedLevel == 0)
         {
