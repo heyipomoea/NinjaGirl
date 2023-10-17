@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -191,9 +191,17 @@ public class EnemyPumpkinMan : MonoBehaviour
                     myCollider.enabled = false;
                     StopAllCoroutines();
                     myAnim.SetBool("Die", true);
+                    Time.timeScale = 0.5f;
+                    StartCoroutine("AfterDie");
+                    
                 }
                 canBeHurt = false;
             }
         }
+    }
+    IEnumerator AfterDie()
+    {
+        yield return new WaitForSecondsRealtime(3f);
+        FadeInOut.instance.SceneFadeInOut("LevelSelect");
     }
 }

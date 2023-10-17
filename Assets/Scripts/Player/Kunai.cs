@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -31,7 +31,11 @@ public class Kunai : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       if(collision.tag != "StopPoint")
+       if(collision.tag == "StopPoint" || collision.tag == "Item")
+        {
+
+        }
+        else
         {
             Destroy(this.gameObject);
         }

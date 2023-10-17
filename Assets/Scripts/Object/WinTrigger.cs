@@ -20,7 +20,9 @@ public class WinTrigger : MonoBehaviour
                 PlayerPrefs.SetInt("clearedLevel", levelNumber);
             }
 
-            SceneManager.LoadScene("LevelSelect");
+            //SceneManager.LoadScene("LevelSelect");
+            Time.timeScale = 0f;
+            FadeInOut.instance.SceneFadeInOut("LevelSelect");
         }
     }
 }

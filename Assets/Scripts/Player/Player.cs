@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -10,7 +9,8 @@ public class Player : MonoBehaviour
     public GameObject attackCollider, kunaiPrefab;
 
     float kunaiDistance;
-    public int playerLife;
+    [HideInInspector]public int playerLife;
+    [HideInInspector]public int playerKunai;
 
     Canvas myCanvas;
 
@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
         isHurt = false;
         canBeHurt = true;
         playerLife = PlayerPrefs.GetInt("PlayerLife");
+        playerKunai = PlayerPrefs.GetInt("PlayerKunai");
     }
 
     private void Update()
@@ -56,12 +57,17 @@ public class Player : MonoBehaviour
             canJump = false;
         }
 
-        if(Input.GetKeyDown(KeyCode.G) && isHurt==false)
+        if(Input.GetKeyDown(KeyCode.G) && isHurt==false && !myAnim.GetCurrentAnimatorStateInfo(0).IsName("AttackThrow") && !myAnim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
         {
-            
-            myAnim.SetTrigger("AttackThrow");
-            isAttack = true;
-            canJump = false;
+            if(playerKunai > 0)
+            {
+                playerKunai--;
+                PlayerPrefs.SetInt("PlayerKunai", playerKunai);
+                myCanvas.KunaiUpdate();
+                myAnim.SetTrigger("AttackThrow");
+                isAttack = true;
+                canJump = false;
+            }
         }
     }
 
@@ -115,11 +121,13 @@ public class Player : MonoBehaviour
         {
             myAudioSource.PlayOneShot(myAudioClip[4]);
             playerLife = 0;
+            PlayerPrefs.SetInt("PlayerLife", playerLife);
+            myCanvas.LifeUpdate();
+            PlayerPrefs.SetInt("PlayerLife", 5);
             isHurt = true;
             isAttack = true;
             myRigi.velocity = new Vector2(0f, 0f);
             myAnim.SetBool("Die", true);
-            PlayerPrefs.SetInt("PlayerLife", 5);
             FadeInOut.instance.SceneFadeInOut("LevelSelect");
         }
     }
