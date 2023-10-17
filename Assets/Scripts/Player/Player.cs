@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
             isJumpPressed = true;
             canJump = false;
         }
-        if(Input.GetKeyDown(KeyCode.T) && isHurt==false)
+        if(Input.GetKeyDown(KeyCode.Mouse0) && isHurt==false)
         {
             
             myAnim.SetTrigger("Attack");
@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
             canJump = false;
         }
 
-        if(Input.GetKeyDown(KeyCode.G) && isHurt==false && !myAnim.GetCurrentAnimatorStateInfo(0).IsName("AttackThrow") && !myAnim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        if(Input.GetKeyDown(KeyCode.Mouse1) && isHurt==false && !myAnim.GetCurrentAnimatorStateInfo(0).IsName("AttackThrow") && !myAnim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
         {
             if(playerKunai > 0)
             {

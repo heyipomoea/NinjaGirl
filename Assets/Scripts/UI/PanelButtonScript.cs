@@ -9,6 +9,8 @@ public class PanelButtonScript : MonoBehaviour
 
     public void ReplayButton()
     {
+        BGMController myBGM = GameObject.Find("BGMController").GetComponent<BGMController>();
+        myBGM.myAudioSource.PlayOneShot(myBGM.myButtonClip[0]);
         string sceneName = SceneManager.GetActiveScene().name;
         FadeInOut.instance.SceneFadeInOut(sceneName);
     }
@@ -17,6 +19,8 @@ public class PanelButtonScript : MonoBehaviour
     {
         //SceneManager.LoadScene("MainMenu");
         //Time.timeScale = 1.0f;
+        BGMController myBGM = GameObject.Find("BGMController").GetComponent<BGMController>();
+        myBGM.myAudioSource.PlayOneShot(myBGM.myButtonClip[0]);
         FadeInOut.instance.SceneFadeInOut("MainMenu");
     }
 
@@ -24,6 +28,8 @@ public class PanelButtonScript : MonoBehaviour
     {
         //SceneManager.LoadScene("LevelSelect");
         //Time.timeScale = 1.0f;
+        BGMController myBGM = GameObject.Find("BGMController").GetComponent<BGMController>();
+        myBGM.myAudioSource.PlayOneShot(myBGM.myButtonClip[0]);
         FadeInOut.instance.SceneFadeInOut("LevelSelect");
     }
 
@@ -31,6 +37,9 @@ public class PanelButtonScript : MonoBehaviour
     {
         RectTransform DataDeleteImage = GameObject.Find("Canvas/SafeAreaPanel/DataDeleteImage").GetComponent<RectTransform>();
         DataDeleteImage.anchoredPosition = new Vector2(0f, 1500f);
+
+        BGMController myBGM = GameObject.Find("BGMController").GetComponent<BGMController>();
+        myBGM.myAudioSource.PlayOneShot(myBGM.myButtonClip[0]);
     }
 
     public void YesButton() 
@@ -40,12 +49,18 @@ public class PanelButtonScript : MonoBehaviour
         checkScript.FirstTimePlayState();
         RectTransform DataDeleteImage = GameObject.Find("Canvas/SafeAreaPanel/DataDeleteImage").GetComponent<RectTransform>();
         DataDeleteImage.anchoredPosition = new Vector2(0f, 1500f);
+
+        BGMController myBGM = GameObject.Find("BGMController").GetComponent<BGMController>();
+        myBGM.myAudioSource.PlayOneShot(myBGM.myButtonClip[0]);
     }
 
     public void DataDeleteButton()
     {
         RectTransform DataDeleteImage = GameObject.Find("Canvas/SafeAreaPanel/DataDeleteImage").GetComponent<RectTransform>();
         DataDeleteImage.anchoredPosition = new Vector2(0f, -100f);
+
+        BGMController myBGM = GameObject.Find("BGMController").GetComponent<BGMController>();
+        myBGM.myAudioSource.PlayOneShot(myBGM.myButtonClip[0]);
     }
 
     public void setSelectPanelOn()
@@ -62,11 +77,15 @@ public class PanelButtonScript : MonoBehaviour
 
     public void SetStopButtonOn()
     {
+        BGMController myBGM = GameObject.Find("BGMController").GetComponent<BGMController>();
+        myBGM.myAudioSource.PlayOneShot(myBGM.myButtonClip[0]);
         stopButton.SetActive(true);
     }
 
     public void SetStopButtonOff()
     {
+        BGMController myBGM = GameObject.Find("BGMController").GetComponent<BGMController>();
+        myBGM.myAudioSource.PlayOneShot(myBGM.myButtonClip[0]);
         stopButton.SetActive(false);
     }
 
@@ -79,6 +98,8 @@ public class PanelButtonScript : MonoBehaviour
         GameObject playButton = GameObject.Find("Canvas/SafeAreaPanel/PlayButton");
         playButton.SetActive(false);
 
+        BGMController myBGM = GameObject.Find("BGMController").GetComponent<BGMController>();
+        myBGM.myAudioSource.PlayOneShot(myBGM.myButtonClip[0]);
         //StartCoroutine(LevelSelect());
         FadeInOut.instance.SceneFadeInOut("LevelSelect");
     }

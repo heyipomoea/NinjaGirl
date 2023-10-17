@@ -39,6 +39,8 @@ public class SelectSceneButtonScript : MonoBehaviour
     public void GoToLevel1()
     {
         //SceneManager.LoadScene("Level1");
+        BGMController myBGM = GameObject.Find("BGMController").GetComponent<BGMController>();
+        myBGM.myAudioSource.PlayOneShot(myBGM.myButtonClip[0]);
         FadeInOut.instance.SceneFadeInOut("Level1");
     }
 
@@ -47,7 +49,14 @@ public class SelectSceneButtonScript : MonoBehaviour
         if(clearedLevel >= 1)
         {
             //SceneManager.LoadScene("Level2");
+            BGMController myBGM = GameObject.Find("BGMController").GetComponent<BGMController>();
+            myBGM.myAudioSource.PlayOneShot(myBGM.myButtonClip[0]);
             FadeInOut.instance.SceneFadeInOut("Level2");
+        }
+        else
+        {
+            BGMController myBGM = GameObject.Find("BGMController").GetComponent<BGMController>();
+            myBGM.myAudioSource.PlayOneShot(myBGM.myButtonClip[1]);
         }
     }
 
@@ -56,13 +65,22 @@ public class SelectSceneButtonScript : MonoBehaviour
         if(clearedLevel >= 2)
         {
             //SceneManager.LoadScene("Level3");
+            BGMController myBGM = GameObject.Find("BGMController").GetComponent<BGMController>();
+            myBGM.myAudioSource.PlayOneShot(myBGM.myButtonClip[0]);
             FadeInOut.instance.SceneFadeInOut("Level3");
+        }
+        else
+        {
+            BGMController myBGM = GameObject.Find("BGMController").GetComponent<BGMController>();
+            myBGM.myAudioSource.PlayOneShot(myBGM.myButtonClip[1]);
         }
     }
 
     public void GoToMainMenu()
     {
         //SceneManager.LoadScene("MainMenu");
+        BGMController myBGM = GameObject.Find("BGMController").GetComponent<BGMController>();
+        myBGM.myAudioSource.PlayOneShot(myBGM.myButtonClip[0]);
         FadeInOut.instance.SceneFadeInOut("MainMenu");
     }
 }
