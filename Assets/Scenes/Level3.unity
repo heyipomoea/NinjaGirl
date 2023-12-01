@@ -242,6 +242,11 @@ Transform:
   m_Father: {fileID: 519420032}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &293280085 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3030715369560760372, guid: f58e782da971bf948a7df2e797c60073, type: 3}
+  m_PrefabInstance: {fileID: 1238395643564990694}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1058,6 +1063,10 @@ PrefabInstance:
       propertyPath: life
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3250011809054849958, guid: befa63d1f26b18140a337b30be332218, type: 3}
+      propertyPath: WinPanel
+      value: 
+      objectReference: {fileID: 293280085}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3657,6 +3666,10 @@ PrefabInstance:
     - target: {fileID: 2450120642958756651, guid: f58e782da971bf948a7df2e797c60073, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030715369560760372, guid: f58e782da971bf948a7df2e797c60073, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7193826059137216409, guid: f58e782da971bf948a7df2e797c60073, type: 3}
       propertyPath: m_Pivot.x

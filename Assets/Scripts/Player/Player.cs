@@ -124,6 +124,7 @@ public class Player : MonoBehaviour
             PlayerPrefs.SetInt("PlayerLife", playerLife);
             myCanvas.LifeUpdate();
             PlayerPrefs.SetInt("PlayerLife", 5);
+            PlayerPrefs.SetInt("PlayerKunai", 99);
             isHurt = true;
             isAttack = true;
             myRigi.velocity = new Vector2(0f, 0f);
@@ -167,6 +168,7 @@ public class Player : MonoBehaviour
                 myRigi.velocity = new Vector2(0f, 0f);
                 myAnim.SetBool("Die", true);
                 PlayerPrefs.SetInt("PlayerLife", 5);
+                PlayerPrefs.SetInt("PlayerKunai", 99);
                 FadeInOut.instance.SceneFadeInOut("LevelSelect");
             }
         }
@@ -223,6 +225,7 @@ public class Player : MonoBehaviour
                 myRigi.velocity = new Vector2(0f, 0f);
                 myAnim.SetBool("Die", true);
                 PlayerPrefs.SetInt("PlayerLife", 5);
+                PlayerPrefs.SetInt("PlayerKunai", 99);
                 FadeInOut.instance.SceneFadeInOut("LevelSelect");
             }
         }

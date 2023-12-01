@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyPumpkinMan : MonoBehaviour
 {
+    public GameObject WinPanel;
     bool isAlive, isIdle, jumpAttack, isJumpUp, slideAttack, isHurt, canBeHurt;
 
     public int life;
@@ -194,6 +195,7 @@ public class EnemyPumpkinMan : MonoBehaviour
                     Time.timeScale = 0.5f;
                     StartCoroutine("AfterDie");
                     
+
                 }
                 canBeHurt = false;
             }
@@ -202,6 +204,7 @@ public class EnemyPumpkinMan : MonoBehaviour
     IEnumerator AfterDie()
     {
         yield return new WaitForSecondsRealtime(3f);
-        FadeInOut.instance.SceneFadeInOut("LevelSelect");
+        WinPanel.SetActive(true);
+        //FadeInOut.instance.SceneFadeInOut("LevelSelect");
     }
 }
